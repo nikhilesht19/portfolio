@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Nikhilesh Thogaramudi — Site Reliability Engineer</title>
+  <meta name="description" content="Portfolio of Sai Nikhilesh Thogaramudi — Site Reliability Engineer specializing in Kubernetes operations, cloud automation, and infrastructure observability." />
+  <meta name="keywords" content="SRE, Kubernetes, DevOps, Cloud, Portfolio, Site Reliability Engineer" />
+  <meta name="author" content="Sai Nikhilesh Thogaramudi" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-counter" id="preloader-counter">0</div>
+      <div class="preloader-bar">
+        <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+      </div>
+      <div class="preloader-text">LOADING PORTFOLIO</div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-name">SAI NIKHILESH THOGARAMUDI</span>
+        </a>
+        <span class="nav-tagline">SITE RELIABILITY ENGINEER<br>DEVOPS<br>CLOUD & INFRASTRUCTURE</span>
+      </div>
+      <div class="nav-center">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="nav-link" data-section="about">ABOUT</a></li>
+          <li><a href="#skills" class="nav-link" data-section="skills">SKILLS</a></li>
+          <li><a href="#experience" class="nav-link" data-section="experience">EXPERIENCE</a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects">PROJECTS</a></li>
+          <li><a href="#certifications" class="nav-link" data-section="certifications">CERTIFICATIONS</a></li>
+          <li><a href="#awards" class="nav-link" data-section="awards">AWARDS</a></li>
+          <li><a href="#education" class="nav-link" data-section="education">EDUCATION</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-nav-links">
+      <li><a href="#about" class="mobile-nav-link">ABOUT</a></li>
+      <li><a href="#skills" class="mobile-nav-link">SKILLS</a></li>
+      <li><a href="#experience" class="mobile-nav-link">EXPERIENCE</a></li>
+      <li><a href="#projects" class="mobile-nav-link">PROJECTS</a></li>
+      <li><a href="#certifications" class="mobile-nav-link">CERTIFICATIONS</a></li>
+      <li><a href="#awards" class="mobile-nav-link">AWARDS</a></li>
+      <li><a href="#education" class="mobile-nav-link">EDUCATION</a></li>
+      <li><a href="#contact" class="mobile-nav-link">CONTACT</a></li>
+    </ul>
+  </div>
+
+  <!-- Three.js Canvas -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="section hero-section">
+    <div class="dot-grid"></div>
+    <div class="hero-icons-container reveal">
+      <div class="hero-icon-item" data-tooltip="Docker" style="--float-delay: 0s; --float-duration: 3.2s; --brand-color: #2496ED;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13.962 6.075c0-.083-.066-.15-.149-.15H12.02c-.083 0-.15.067-.15.15v1.792c0 .083.067.15.15.15h1.793c.083 0 .149-.067.149-.15V6.075zm0-2.292c0-.083-.066-.15-.149-.15H12.02c-.083 0-.15.067-.15.15v1.793c0 .083.067.15.15.15h1.793c.083 0 .149-.067.149-.15V3.783zm-2.292 2.292c0-.083-.067-.15-.15-.15H9.728c-.082 0-.149.067-.149.15v1.792c0 .083.067.15.149.15h1.793c.083 0 .15-.067.15-.15V6.075zm0-2.292c0-.083-.067-.15-.15-.15H9.728c-.082 0-.149.067-.149.15v1.793c0 .083.067.15.149.15h1.793c.083 0 .15-.067.15-.15V3.783zm-2.292 2.292c0-.083-.067-.15-.15-.15H7.436c-.083 0-.15.067-.15.15v1.792c0 .083.067.15.15.15h1.793c.083 0 .15-.067.15-.15V6.075zm0-2.292c0-.083-.067-.15-.15-.15H7.436c-.083 0-.15.067-.15.15v1.793c0 .083.067.15.15.15h1.793c.083 0 .15-.067.15-.15V3.783zm-2.292 2.292c0-.083-.067-.15-.15-.15H5.144c-.083 0-.15.067-.15.15v1.792c0 .083.067.15.15.15h1.793c.083 0 .15-.067.15-.15V6.075zm11.458 0c0-.083-.066-.15-.149-.15h-1.793c-.083 0-.15.067-.15.15v1.792c0 .083.067.15.15.15h1.793c.083 0 .149-.067.149-.15V6.075zM22.047 11.25c-.267-.468-.696-.867-1.309-.948-1.579-.208-2.613.687-3.212 1.488-.135-.043-.274-.085-.418-.124v-1.742c0-.082-.067-.149-.15-.149h-1.793c-.083 0-.15.067-.15.149v2.164c-.792-.162-1.745-.259-2.827-.259-4.887 0-8.125 1.83-8.125 5.568 0 3.738 4.237 4.256 5.86 4.256.402 0 .736-.026 1.015-.054.498.441 1.25.759 2.274.759 1.95 0 3.518-1.121 4.542-2.585.908.106 1.777.018 2.502-.45.72-.464 1.157-1.252 1.242-2.261.085-1.009-.232-2.072-.818-3.045-.048-.079-.098-.158-.151-.237.587-.665 1.261-1.31 1.583 1.637.33-.335.539-.894.198-1.491z" fill="#2496ED"/></svg>
+      </div>
+      <div class="hero-icon-item" data-tooltip="Kubernetes" style="--float-delay: 0.5s; --float-duration: 3.6s; --brand-color: #326CE5;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M11.66.75a.65.65 0 01.68 0l8.77 5.06a.65.65 0 01.33.56v10.13a.65.65 0 01-.33.57l-8.77 5.06a.65.65 0 01-.68 0l-8.77-5.06A.65.65 0 012.5 16.5V6.37a.65.65 0 01.33-.56L11.66.75z" fill="#326CE5"/><path d="M12 4.4a7.6 7.6 0 100 15.2 7.6 7.6 0 000-15.2zm0 2.2a5.4 5.4 0 110 10.8 5.4 5.4 0 010-10.8z" fill="#FFF"/><path d="M12 5.4a1 1 0 100 2 1 1 0 000-2zm0 11.2a1 1 0 100 2 1 1 0 000-2zm5.6-5.6a1 1 0 102 0 1 1 0 00-2 0zM4.4 11a1 1 0 102 0 1 1 0 00-2 0z" fill="#FFF"/></svg>
+      </div>
+      <div class="hero-icon-item" data-tooltip="Terraform" style="--float-delay: 1s; --float-duration: 3.0s; --brand-color: #844FBA;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M1.5 6.75V1.5h10.5v5.25H1.5zm12 5.25V6.75H24V12h-10.5zm-12 5.25v-5.25h10.5v5.25H1.5zm12 5.25v-5.25H24v5.25h-10.5z" fill="#844FBA"/></svg>
+      </div>
+      <div class="hero-icon-item" data-tooltip="Ansible" style="--float-delay: 1.5s; --float-duration: 3.8s; --brand-color: #EE0000;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#EE0000"/><path d="M13.758 17.587l.42-1.782h-4.356l.42 1.782h3.516zM12 5.232L7.332 17.587h2.072l1.008-4.272h3.176l1.008 4.272h2.072L12 5.232z" fill="#FFF"/></svg>
+      </div>
+      <div class="hero-icon-item" data-tooltip="ArgoCD" style="--float-delay: 0.2s; --float-duration: 3.4s; --brand-color: #EE6F57;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z" fill="#EE6F57"/><path d="M12 4a8 8 0 100 16 8 8 0 000-16z" fill="#61C3D0"/><path d="M12 7a5 5 0 100 10 5 5 0 000-10z" fill="#F1BD6C"/><circle cx="12" cy="12" r="2.5" fill="#FFF"/></svg>
+      </div>
+      <div class="hero-icon-item" data-tooltip="Jenkins" style="--float-delay: 0.7s; --float-duration: 3.5s; --brand-color: #D24939;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12.6 1.8c.2-.2.5-.2.7 0l4.5 4.5c.2.2.2.5 0 .7l-4.5 4.5c-.2.2-.5.2-.7 0L8.1 7c-.2-.2-.2-.5 0-.7l4.5-4.5z" fill="#2B2B2A"/><path d="M13.4 8.2l1.8.8-1.4 1.8-.4-.4-1.4.8.4-.8L11 9.6l1.8-.8.6-.6z" fill="#D24939"/><path d="M14 11.2c0 .8-.5 1.5-1.2 1.8V17h-1.6v-4c-.7-.3-1.2-1-1.2-1.8 0-1.1.9-2 2-2s2 .9 2 2z" fill="#1B2A4A"/><path d="M12 9.5c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" fill="#F1BD6C"/></svg>
+      </div>
+      <div class="hero-icon-item" data-tooltip="Prometheus" style="--float-delay: 1.2s; --float-duration: 3.1s; --brand-color: #E6522C;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z" fill="#22252A"/><path d="M12 4.5s5.5 5.5 5.5 9.5a5.5 5.5 0 01-11 0c0-4 5.5-9.5 5.5-9.5z" fill="#E6522C"/><path d="M12 7.5s3.5 3.5 3.5 6.5a3.5 3.5 0 01-7 0c0-3 3.5-6.5 3.5-6.5z" fill="#EC7626"/><path d="M12 10.5c.83 0 1.5 1 1.5 2.5s-.67 2.5-1.5 2.5-1.5-1-1.5-2.5.67-2.5 1.5-2.5z" fill="#F1BD6C"/></svg>
+      </div>
+      <div class="hero-icon-item" data-tooltip="Grafana" style="--float-delay: 1.7s; --float-duration: 3.7s; --brand-color: #F8B91E;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="12" fill="#1F1F20"/><path d="M12 4.5a7.5 7.5 0 100 15 7.5 7.5 0 000-15zm0 1.5a6 6 0 110 12 6 6 0 010-12zm0 1.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" fill="#F8B91E"/><path d="M12 9a3 3 0 110 6 3 3 0 010-6zm0 1.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" fill="#F8B91E"/></svg>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge reveal">
+          <span class="diamond">◆</span> NOW AVAILABLE
+        </div>
+        <h1 class="hero-heading reveal">
+          HI, I'M NIKHILESH.<br>
+          I BUILD SYSTEMS<br>
+          THAT NEVER SLEEP.
+        </h1>
+      </div>
+      <div class="hero-right glass-card">
+        <p class="hero-description">
+          A DevOps Engineer passionate about building scalable cloud infrastructure, automating workflows, and ensuring highly available systems. I specialize in AWS, Kubernetes, Terraform, Docker, and CI/CD to help teams deliver software faster and more reliably.
+        </p>
+      </div>
+    </div>
+
+    <div class="scroll-indicator reveal">
+      <span class="scroll-arrow">↓</span>
+      <span class="scroll-text">DISCOVER MORE</span>
+    </div>
+
+    <div class="hero-meta-right reveal">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+      <span>SYSTEMS ENGINEER AT INFOSYS</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section about-section">
+    <div class="dot-grid"></div>
+    <div class="section-counter reveal">002 — 007</div>
+
+    <div class="about-content">
+      <div class="about-left">
+        <h2 class="section-heading reveal">
+          ENGINEERING<br>
+          RELIABILITY<br>
+          AT SCALE.
+        </h2>
+      </div>
+      <div class="about-right glass-card reveal">
+        <p class="about-text">
+          Site Reliability Engineer specializing in Kubernetes operations, 
+          cloud automation, and infrastructure observability. Proven ability 
+          to reduce incident response times, optimize cloud costs, and 
+          implement monitoring solutions that improve system reliability.
+        </p>
+        <p class="about-text" style="margin-bottom: 0;">
+          Currently working at Infosys, leading containerization initiatives, 
+          building CI/CD pipelines, and architecting observability frameworks 
+          that keep production systems running smoothly.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card glass-card reveal">
+        <div class="stat-number" data-target="40">0</div>
+        <div class="stat-unit">%</div>
+        <div class="stat-label">MTTR REDUCTION</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-card glass-card reveal">
+        <div class="stat-number" data-target="50">0</div>
+        <div class="stat-unit">+</div>
+        <div class="stat-label">INFRA COMPONENTS</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-card glass-card reveal">
+        <div class="stat-number" data-target="99">0</div>
+        <div class="stat-unit">.9%</div>
+        <div class="stat-label">UPTIME TARGET</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-card glass-card reveal">
+        <div class="stat-number" data-target="24">0</div>
+        <div class="stat-unit">/7</div>
+        <div class="stat-label">MONITORING</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="section skills-section">
+    <div class="dot-grid"></div>
+    <div class="section-counter reveal">003 — 007</div>
+
+    <div class="skills-header">
+      <h2 class="section-heading reveal">TECHNICAL<br>ARSENAL.</h2>
+      <p class="skills-subtitle reveal">Tools and technologies I work with daily to build and maintain reliable infrastructure.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card glass-card reveal" data-tilt data-modal="languages">
+        <div class="skill-card-header">
+          <div class="skill-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <span class="skill-category">LANGUAGES & TECH</span>
+        </div>
+        <div class="skill-list">
+          <span class="skill-tag" data-skill="python">Python</span>
+          <span class="skill-tag" data-skill="bash">Bash</span>
+          <span class="skill-tag" data-skill="linux">Linux</span>
+          <span class="skill-tag" data-skill="networking">Networking</span>
+          <span class="skill-tag" data-skill="slislo">SLI/SLO Design</span>
+        </div>
+        <span class="skill-click-hint">Click to view details →</span>
+      </div>
+
+      <div class="skill-card glass-card reveal" data-tilt data-modal="devops">
+        <div class="skill-card-header">
+          <div class="skill-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+          </div>
+          <span class="skill-category">DEVOPS TOOLS</span>
+        </div>
+        <div class="skill-list">
+          <span class="skill-tag" data-skill="git">Git</span>
+          <span class="skill-tag" data-skill="docker">Docker</span>
+          <span class="skill-tag" data-skill="kubernetes">Kubernetes</span>
+          <span class="skill-tag" data-skill="terraform">Terraform</span>
+          <span class="skill-tag" data-skill="githubactions">GitHub Actions</span>
+          <span class="skill-tag" data-skill="helm">Helm</span>
+          <span class="skill-tag" data-skill="ansible">Ansible</span>
+        </div>
+        <span class="skill-click-hint">Click to view details →</span>
+      </div>
+
+      <div class="skill-card glass-card reveal" data-tilt data-modal="cloud">
+        <div class="skill-card-header">
+          <div class="skill-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <span class="skill-category">CLOUD & INFRA</span>
+        </div>
+        <div class="skill-list">
+          <span class="skill-tag" data-skill="aws">AWS</span>
+          <span class="skill-tag" data-skill="gcp">GCP</span>
+          <span class="skill-tag" data-skill="prometheus">Prometheus</span>
+          <span class="skill-tag" data-skill="grafana">Grafana</span>
+          <span class="skill-tag" data-skill="cloudflare">Cloudflare</span>
+          <span class="skill-tag" data-skill="datadog">Datadog</span>
+        </div>
+        <span class="skill-click-hint">Click to view details →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="section experience-section">
+    <div class="dot-grid"></div>
+    <div class="section-counter reveal">004 — 007</div>
+
+    <div class="experience-header">
+      <h2 class="section-heading reveal">PROFESSIONAL<br>EXPERIENCE.</h2>
+    </div>
+
+    <!-- 3D Perspective Mockup -->
+    <div class="experience-mockup reveal">
+      <div class="mockup-screen">
+        <div class="mockup-header">
+          <div class="mockup-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="mockup-title">Dashboard</span>
+        </div>
+        <div class="mockup-content">
+          <div class="mockup-card" style="--card-color: #e8d5f5;">
+            <div class="mockup-card-title">Kubernetes Ops</div>
+            <div class="mockup-card-text">Pod orchestration & scaling</div>
+          </div>
+          <div class="mockup-card" style="--card-color: #f5d5d5;">
+            <div class="mockup-card-title">CI/CD Pipelines</div>
+            <div class="mockup-card-text">GitHub Actions automation</div>
+          </div>
+          <div class="mockup-card" style="--card-color: #d5e8f5;">
+            <div class="mockup-card-title">Observability</div>
+            <div class="mockup-card-text">Prometheus & Grafana</div>
+          </div>
+          <div class="mockup-card" style="--card-color: #f5e8d5;">
+            <div class="mockup-card-title">Infrastructure</div>
+            <div class="mockup-card-text">Terraform modules</div>
+          </div>
+          <div class="mockup-card" style="--card-color: #d5f5e8;">
+            <div class="mockup-card-title">Cost Optimization</div>
+            <div class="mockup-card-text">Cloud resource analysis</div>
+          </div>
+          <div class="mockup-card" style="--card-color: #f0d5f5;">
+            <div class="mockup-card-title">Disaster Recovery</div>
+            <div class="mockup-card-text">Runbooks & failover</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-role">SYSTEMS ENGINEER</h3>
+              <span class="timeline-company">Infosys — Hybrid</span>
+            </div>
+            <span class="timeline-date">Oct 2024 — Present</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-category">
+              <h4>Containerization & Kubernetes</h4>
+              <ul>
+                <li>Spearheaded Docker containerization initiative for legacy applications, migrating them to Kubernetes with consistent deployment patterns</li>
+                <li>Orchestrated daily Kubernetes operations across production clusters, optimizing pod placement and implementing zero-downtime deployments</li>
+                <li>Implemented Kubernetes networking infrastructure including Ingress controllers, DNS policies, and load balancer configurations</li>
+              </ul>
+            </div>
+            <div class="timeline-category">
+              <h4>CI/CD & Automation</h4>
+              <ul>
+                <li>Built end-to-end CI/CD pipelines with GitHub Actions, automating build-test-deploy cycles across all environments</li>
+                <li>Created reusable Helm charts for standardized application packaging across dev, staging, and production</li>
+                <li>Automated Cloudflare configuration updates and maintenance workflows through GitHub Actions</li>
+              </ul>
+            </div>
+            <div class="timeline-category">
+              <h4>Infrastructure & Observability</h4>
+              <ul>
+                <li>Engineered Python-based automation tools achieving 40% reduction in mean time to resolution</li>
+                <li>Architected Terraform modules for 50+ infrastructure components with IAM policies and secrets management</li>
+                <li>Established observability framework with Prometheus and Grafana for real-time dashboards and alerting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass-card">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-role">DATABASE ADMINISTRATION INTERN</h3>
+              <span class="timeline-company">Infosys</span>
+            </div>
+            <span class="timeline-date">Apr 2024 — Jun 2024</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-category">
+              <ul>
+                <li>Completed comprehensive Oracle 21c administration training, implemented key database concepts</li>
+                <li>Created, cloned, and managed pluggable databases (PDBs) across container databases for multi-tenant architecture</li>
+                <li>Configured user roles and privileges, performing RMAN backup and recovery with Unix/Linux scripting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section projects-section">
+    <div class="dot-grid"></div>
+    <div class="section-counter reveal">004 — 008</div>
+
+    <div class="project-header">
+      <h2 class="section-heading reveal">PROJECTS.</h2>
+    </div>
+
+    <div class="project-grid">
+      <!-- Shrimp Buddy -->
+      <div class="project-card glass-card reveal" data-modal="project-shrimp-buddy">
+        <div class="project-card-header">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+          </div>
+          <a href="https://github.com/nikhilesht19" target="_blank" class="project-git-link" aria-label="GitHub Repository" onclick="event.stopPropagation();">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+        <h3 class="project-title">Shrimp Buddy</h3>
+        <p class="project-desc">A modular aquaculture monitoring platform featuring real-time water quality tracking, automated aeration logs, and full Kubernetes GitOps deployment.</p>
+        <div class="project-tech-tags">
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Kubernetes</span>
+        </div>
+        <span class="project-click-hint">Click to view details →</span>
+      </div>
+
+      <!-- Cloud Tracker -->
+      <div class="project-card glass-card reveal" data-modal="project-cloud-tracker">
+        <div class="project-card-header">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <a href="https://github.com/nikhilesht19/cloudtracker-dev.git" target="_blank" class="project-git-link" aria-label="GitHub Repository" onclick="event.stopPropagation();">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+        <h3 class="project-title">Cloud Tracker</h3>
+        <p class="project-desc">A centralized cloud resource auditing system that continuously maps active cloud assets, tracks multi-tenant usage, and visualizes cost analysis.</p>
+        <div class="project-tech-tags">
+          <span class="project-tag">Go</span>
+          <span class="project-tag">AWS</span>
+          <span class="project-tag">Terraform</span>
+          <span class="project-tag">Docker</span>
+        </div>
+        <span class="project-click-hint">Click to view details →</span>
+      </div>
+
+      <!-- Stock Room -->
+      <div class="project-card glass-card reveal" data-modal="project-stock-room">
+        <div class="project-card-header">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          </div>
+          <a href="https://github.com/nikhilesht19/stockroom.git" target="_blank" class="project-git-link" aria-label="GitHub Repository" onclick="event.stopPropagation();">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+        <h3 class="project-title">Stock Room</h3>
+        <p class="project-desc">An automated inventory control and tracking system supporting multi-warehouse cataloging, audit logs, low-stock threshold triggers, and secure API auth.</p>
+        <div class="project-tech-tags">
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Redis</span>
+          <span class="project-tag">GitHub Actions</span>
+        </div>
+        <span class="project-click-hint">Click to view details →</span>
+      </div>
+
+      <!-- Pulse Chat -->
+      <div class="project-card glass-card reveal" data-modal="project-pulse-chat">
+        <div class="project-card-header">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <a href="https://github.com/nikhilesht19/pulse-chat.git" target="_blank" class="project-git-link" aria-label="GitHub Repository" onclick="event.stopPropagation();">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+        <h3 class="project-title">Pulse Chat</h3>
+        <p class="project-desc">A real-time collaborative communication app utilizing WebSockets for instant message delivery, multi-channel management, and low latency user interactions.</p>
+        <div class="project-tech-tags">
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">WebSockets</span>
+          <span class="project-tag">Docker</span>
+          <span class="project-tag">CI/CD</span>
+        </div>
+        <span class="project-click-hint">Click to view details →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS SECTION ===== -->
+  <section id="certifications" class="section certifications-section">
+    <div class="dot-grid"></div>
+    <div class="section-counter reveal">005 — 007</div>
+
+    <div class="cert-header">
+      <h2 class="section-heading reveal">CERTIFICATIONS.</h2>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card glass-card reveal" data-modal="ckad">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+        </div>
+        <h3 class="cert-title">CKAD</h3>
+        <p class="cert-desc">Certified Kubernetes Application Developer</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+      <div class="cert-card glass-card reveal" data-modal="aws">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+        </div>
+        <h3 class="cert-title">AWS Certified</h3>
+        <p class="cert-desc">Amazon Web Services Cloud Certification</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+      <div class="cert-card glass-card reveal" data-modal="terraform">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h3 class="cert-title">Terraform for Beginners</h3>
+        <p class="cert-desc">Infrastructure as Code using Google Cloud Platform</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS SECTION ===== -->
+  <section id="awards" class="section awards-section">
+    <div class="dot-grid"></div>
+    <div class="section-counter reveal">006 — 007</div>
+
+    <div class="cert-header">
+      <h2 class="section-heading reveal">AWARDS &<br>RECOGNITION.</h2>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card glass-card reveal" data-modal="awards">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <h3 class="cert-title">SRE Operations</h3>
+        <p class="cert-desc">Outstanding performance awards for incident response & MTTR reduction.</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+      <div class="cert-card glass-card reveal" data-modal="awards">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3 class="cert-title">Container Leadership</h3>
+        <p class="cert-desc">Recognized for leading legacy migrations to Kubernetes and Docker.</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+      <div class="cert-card glass-card reveal" data-modal="awards">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        </div>
+        <h3 class="cert-title">Automation & Mentorship</h3>
+        <p class="cert-desc">Appreciated for time-saving Python tools and mentoring team members.</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section id="education" class="section education-section">
+    <div class="dot-grid"></div>
+    <div class="section-counter reveal">007 — 007</div>
+
+    <div class="cert-header">
+      <h2 class="section-heading reveal">EDUCATION.</h2>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card glass-card reveal" data-modal="education">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+        </div>
+        <h3 class="cert-title">B.Tech in ECE</h3>
+        <p class="cert-desc">Narayana Engineering College — Electronics & Communications Engineering.</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+      <div class="cert-card glass-card reveal" data-modal="education">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </div>
+        <h3 class="cert-title">Core Academic Focus</h3>
+        <p class="cert-desc">Computer Networks, Microprocessors, Embedded Systems, and Digital Electronics.</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+      <div class="cert-card glass-card reveal" data-modal="education">
+        <div class="cert-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3 class="cert-title">Key Takeaways</h3>
+        <p class="cert-desc">Strong foundation in networking and systems applied to cloud infrastructure reliability.</p>
+        <span class="cert-click-hint">Click to view details →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section contact-section">
+    <div class="dot-grid"></div>
+
+    <div class="contact-content">
+      <p class="contact-pretext reveal">Thanks for stopping by.</p>
+      <p class="contact-pretext reveal" style="max-width: 600px; margin: 16px auto; font-size: 0.95rem; opacity: 0.85; line-height: 1.8;">Every resilient platform starts with a single deployment, and every great collaboration starts with a conversation.</p>
+      <p class="contact-pretext reveal" style="font-weight: 500; color: var(--text-primary);">Let's build something reliable together.</p>
+
+      <a href="mailto:nikhileshthogaramudi@gmail.com" class="contact-cta reveal">GET STARTED</a>
+
+      <div class="contact-links reveal">
+        <a href="mailto:nikhileshthogaramudi@gmail.com" class="contact-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>nikhileshthogaramudi@gmail.com</span>
+        </a>
+        <a href="tel:9989388682" class="contact-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>9989388682</span>
+        </a>
+        <a href="https://linkedin.com/in/sai-nikhilesh-thogaramudi" target="_blank" class="contact-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>© 2024 Sai Nikhilesh Thogaramudi</span>
+        <span>Built with passion & code</span>
+      </div>
+    </footer>
+  </section>
+
+  <!-- Detail Modal -->
+  <div class="detail-modal" id="detail-modal">
+    <div class="detail-modal-overlay" id="detail-modal-overlay"></div>
+    <div class="detail-modal-content glass-card" id="detail-modal-content">
+      <button class="detail-modal-close" id="detail-modal-close">✕</button>
+      
+      <!-- Languages & Tech -->
+      <div class="modal-body" data-content="languages">
+        <div class="modal-header-section">
+          <div class="modal-badge">SKILLS DEEP DIVE</div>
+          <h3 class="modal-title">Languages & Core Technologies</h3>
+        </div>
+        <div class="modal-section" data-skill="python">
+          <h4>Python</h4>
+          <p class="modal-text">Learned scripting for system automation, developing custom CLI tools (resulting in a 40% reduction in MTTR), processing data/logs, and writing custom API integrations for Slack and alerting pipelines.</p>
+        </div>
+        <div class="modal-section" data-skill="bash">
+          <h4>Bash & Shell Scripting</h4>
+          <p class="modal-text">Learned Linux automation, writing clean shell scripts for server provisioning, cron-job schedulers, backup routines, and customizing environment configurations.</p>
+        </div>
+        <div class="modal-section" data-skill="linux">
+          <h4>Linux System Administration</h4>
+          <p class="modal-text">Learned system level concepts, performance troubleshooting, process administration (systemd, journald), log inspection, network interfaces, and file permission management.</p>
+        </div>
+        <div class="modal-section" data-skill="networking">
+          <h4>Networking</h4>
+          <p class="modal-text">Learned networking fundamentals including TCP/IP, DNS routing, HTTP/S request-response lifecycle, load balancer configurations, subnetting, and network security policies.</p>
+        </div>
+        <div class="modal-section" data-skill="slislo">
+          <h4>SLI/SLO Design</h4>
+          <p class="modal-text">Learned how to design Service Level Indicators (SLIs) and Service Level Objectives (SLOs) to establish reliable monitoring metrics, error budgets, and actionable alert rules.</p>
+        </div>
+      </div>
+
+      <!-- DevOps Tools -->
+      <div class="modal-body" data-content="devops">
+        <div class="modal-header-section">
+          <div class="modal-badge">SKILLS DEEP DIVE</div>
+          <h3 class="modal-title">DevOps & Automation Tools</h3>
+        </div>
+        <div class="modal-section" data-skill="git">
+          <h4>Git & Version Control</h4>
+          <p class="modal-text">Learned distributed version control, structuring branching models (Gitflow), review workflows, cherry-picking, interactive rebasing, and managing secrets securely.</p>
+        </div>
+        <div class="modal-section" data-skill="docker">
+          <h4>Docker</h4>
+          <p class="modal-text">Learned to write optimized, multi-stage Dockerfiles, building lightweight container images, configuring environment variables, mounting volumes, and setting container networking.</p>
+        </div>
+        <div class="modal-section" data-skill="kubernetes">
+          <h4>Kubernetes</h4>
+          <p class="modal-text">Learned core orchestration: designing deployments, configuring services, managing ingress controllers, volume mounts, scheduling pods, and implementing role-based access control (RBAC).</p>
+        </div>
+        <div class="modal-section" data-skill="terraform">
+          <h4>Terraform</h4>
+          <p class="modal-text">Learned to author Infrastructure as Code (IaC) using HCL. Built reusable modules, managed remote states securely with backends, and implemented plan/apply CI integration.</p>
+        </div>
+        <div class="modal-section" data-skill="githubactions">
+          <h4>GitHub Actions</h4>
+          <p class="modal-text">Learned to design end-to-end automation workflows, configuring build-test-push-deploy pipelines, managing job dependencies, and handling environment-specific secrets.</p>
+        </div>
+        <div class="modal-section" data-skill="helm">
+          <h4>Helm</h4>
+          <p class="modal-text">Learned to package Kubernetes applications, templating YAML manifests, managing complex value override structures, and handling application releases and rollbacks.</p>
+        </div>
+        <div class="modal-section" data-skill="ansible">
+          <h4>Ansible</h4>
+          <p class="modal-text">Learned writing declarative playbooks, managing dynamic inventories, automating application configurations, and provisioning remote servers over SSH.</p>
+        </div>
+      </div>
+
+      <!-- Cloud & Infrastructure -->
+      <div class="modal-body" data-content="cloud">
+        <div class="modal-header-section">
+          <div class="modal-badge">SKILLS DEEP DIVE</div>
+          <h3 class="modal-title">Cloud Platforms & Observability</h3>
+        </div>
+        <div class="modal-section" data-skill="aws">
+          <h4>AWS (Amazon Web Services)</h4>
+          <p class="modal-text">Learned to configure secure, fault-tolerant infrastructure: provisioning EC2 instances, designing VPC subnets and routing, setting up AWS EKS clusters, and cloud cost optimization.</p>
+        </div>
+        <div class="modal-section" data-skill="gcp">
+          <h4>GCP (Google Cloud Platform)</h4>
+          <p class="modal-text">Learned cloud resources management: provisioning Compute Engines, Kubernetes Engines (GKE), managing IAM credentials, and GCP cloud storage operations.</p>
+        </div>
+        <div class="modal-section" data-skill="prometheus">
+          <h4>Prometheus</h4>
+          <p class="modal-text">Learned to build systems monitoring, setting up scrape configs, writing custom PromQL queries, instrumenting applications, and defining custom recording/alerting rules.</p>
+        </div>
+        <div class="modal-section" data-skill="grafana">
+          <h4>Grafana</h4>
+          <p class="modal-text">Learned to build rich observability dashboards, creating interactive visualization panels, linking PromQL alerts, and aggregating multi-source metrics.</p>
+        </div>
+        <div class="modal-section" data-skill="cloudflare">
+          <h4>Cloudflare</h4>
+          <p class="modal-text">Learned CDN caching rules, managing DNS records, implementing DDoS protections, configuring Page Rules, and using Cloudflare workers for edge logic.</p>
+        </div>
+        <div class="modal-section" data-skill="datadog">
+          <h4>Datadog</h4>
+          <p class="modal-text">Learned unified observability: instrumenting APM tracing, configuring agent integrations, managing log indexing, and defining monitor threshold alerts.</p>
+        </div>
+      </div>
+
+      <!-- CKAD -->
+      <div class="modal-body" data-content="ckad">
+        <div class="modal-header-section">
+          <div class="modal-badge">CERTIFICATION</div>
+          <h3 class="modal-title">CKAD — Certified Kubernetes Application Developer</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Tools & Technologies</h4>
+          <div class="modal-tags">
+            <span class="modal-tag">Kubernetes</span>
+            <span class="modal-tag">kubectl</span>
+            <span class="modal-tag">Pods</span>
+            <span class="modal-tag">Deployments</span>
+            <span class="modal-tag">Services</span>
+            <span class="modal-tag">ConfigMaps</span>
+            <span class="modal-tag">Secrets</span>
+            <span class="modal-tag">Volumes</span>
+            <span class="modal-tag">Network Policies</span>
+            <span class="modal-tag">Helm</span>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>What I Learned</h4>
+          <ul class="modal-list">
+            <li>Designing, building, and deploying cloud-native applications on Kubernetes</li>
+            <li>Configuring multi-container pods, init containers, and sidecar patterns</li>
+            <li>Managing application lifecycle with rolling updates and rollbacks</li>
+            <li>Implementing probes (liveness, readiness, startup) for self-healing workloads</li>
+            <li>Working with persistent volumes, storage classes, and stateful applications</li>
+            <li>Securing applications with RBAC, network policies, and security contexts</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>Key Achievements</h4>
+          <ul class="modal-list">
+            <li>Mastered Kubernetes application deployment patterns and best practices</li>
+            <li>Built production-grade containerized applications with zero-downtime deployment strategies</li>
+            <li>Deep understanding of Kubernetes networking, DNS, and service discovery</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- AWS -->
+      <div class="modal-body" data-content="aws">
+        <div class="modal-header-section">
+          <div class="modal-badge">CERTIFICATION</div>
+          <h3 class="modal-title">AWS Certified — Amazon Web Services</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Tools & Technologies</h4>
+          <div class="modal-tags">
+            <span class="modal-tag">EC2</span>
+            <span class="modal-tag">S3</span>
+            <span class="modal-tag">Lambda</span>
+            <span class="modal-tag">IAM</span>
+            <span class="modal-tag">VPC</span>
+            <span class="modal-tag">CloudWatch</span>
+            <span class="modal-tag">RDS</span>
+            <span class="modal-tag">EKS</span>
+            <span class="modal-tag">CloudFormation</span>
+            <span class="modal-tag">Route 53</span>
+            <span class="modal-tag">ELB</span>
+            <span class="modal-tag">SNS/SQS</span>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>What I Learned</h4>
+          <ul class="modal-list">
+            <li>Architecting highly available, fault-tolerant, and scalable systems on AWS</li>
+            <li>Implementing secure cloud infrastructure with IAM policies, roles, and security groups</li>
+            <li>Deploying and managing compute resources using EC2, Lambda, and EKS</li>
+            <li>Configuring networking with VPCs, subnets, NAT gateways, and Route 53</li>
+            <li>Setting up monitoring and alerting with CloudWatch metrics and alarms</li>
+            <li>Managing storage and databases with S3, EBS, RDS, and DynamoDB</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>Key Achievements</h4>
+          <ul class="modal-list">
+            <li>Designed cost-optimized architectures leveraging auto-scaling and reserved instances</li>
+            <li>Implemented disaster recovery strategies across multiple AWS regions</li>
+            <li>Built serverless workflows using Lambda, API Gateway, and Step Functions</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Terraform -->
+      <div class="modal-body" data-content="terraform">
+        <div class="modal-header-section">
+          <div class="modal-badge">CERTIFICATION</div>
+          <h3 class="modal-title">Terraform for Beginners — Using GCP</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Tools & Technologies</h4>
+          <div class="modal-tags">
+            <span class="modal-tag">Terraform</span>
+            <span class="modal-tag">HCL</span>
+            <span class="modal-tag">GCP</span>
+            <span class="modal-tag">Terraform CLI</span>
+            <span class="modal-tag">State Management</span>
+            <span class="modal-tag">Modules</span>
+            <span class="modal-tag">Variables</span>
+            <span class="modal-tag">Providers</span>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>What I Learned</h4>
+          <ul class="modal-list">
+            <li>Writing Infrastructure as Code using HashiCorp Configuration Language (HCL)</li>
+            <li>Provisioning and managing GCP resources — compute, networking, storage</li>
+            <li>Managing Terraform state files and remote backends for team collaboration</li>
+            <li>Creating reusable Terraform modules for consistent infrastructure patterns</li>
+            <li>Implementing plan, apply, and destroy workflows for safe infrastructure changes</li>
+            <li>Managing variables, outputs, and data sources for dynamic configurations</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>Key Achievements</h4>
+          <ul class="modal-list">
+            <li>Architected Terraform modules managing 50+ infrastructure components</li>
+            <li>Integrated IAM policies and secure secrets handling into IaC workflows</li>
+            <li>Established infrastructure versioning and drift detection practices</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Awards -->
+      <div class="modal-body" data-content="awards">
+        <div class="modal-header-section">
+          <div class="modal-badge">ACHIEVEMENTS</div>
+          <h3 class="modal-title">Awards & Leadership Recognition</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Recognitions at Infosys</h4>
+          <ul class="modal-list">
+            <li>Received multiple awards for outstanding performance in SRE operations</li>
+            <li>Recognized for leadership in driving containerization initiatives across teams</li>
+            <li>Appreciated for automating workflows that saved significant engineering hours</li>
+            <li>Acknowledged for mentoring team members on Kubernetes and DevOps best practices</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>Key Contributions</h4>
+          <ul class="modal-list">
+            <li>Led research into container autoscaling patterns and disaster recovery procedures</li>
+            <li>Documented operational runbooks for critical failover scenarios</li>
+            <li>Achieved significant cloud cost reduction through resource optimization</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="modal-body" data-content="education">
+        <div class="modal-header-section">
+          <div class="modal-badge">EDUCATION</div>
+          <h3 class="modal-title">B.Tech in Electronics & Communications Engineering</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Institution</h4>
+          <p class="modal-text">Narayana Engineering College</p>
+        </div>
+        <div class="modal-section">
+          <h4>Core Subjects</h4>
+          <div class="modal-tags">
+            <span class="modal-tag">Digital Electronics</span>
+            <span class="modal-tag">Signal Processing</span>
+            <span class="modal-tag">Embedded Systems</span>
+            <span class="modal-tag">Communication Systems</span>
+            <span class="modal-tag">Computer Networks</span>
+            <span class="modal-tag">Microprocessors</span>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>Key Takeaways</h4>
+          <ul class="modal-list">
+            <li>Strong foundation in networking and system-level programming</li>
+            <li>Understanding of hardware-software interaction and embedded systems</li>
+            <li>Problem-solving mindset applied to infrastructure and cloud engineering</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project: Shrimp Buddy -->
+      <div class="modal-body" data-content="project-shrimp-buddy">
+        <div class="modal-header-section">
+          <div class="modal-badge">PROJECT DETAILS</div>
+          <h3 class="modal-title">Shrimp Buddy</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Project Details</h4>
+          <p class="modal-text">A modular, production-grade aquaculture monitoring platform built to orchestrate and track water quality metrics, feed schedules, aeration statuses, and system alerts. Designed specifically with microservices architecture to manage IoT sensor inputs, data persistence, and GitOps deployments.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Core Tech Stack</h4>
+          <div class="modal-tags">
+            <span class="modal-tag">Node.js</span>
+            <span class="modal-tag">Express</span>
+            <span class="modal-tag">FastAPI (Python)</span>
+            <span class="modal-tag">PostgreSQL</span>
+            <span class="modal-tag">Redis</span>
+            <span class="modal-tag">Apache Kafka</span>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>DevOps & Infrastructure Stack</h4>
+          <div class="modal-table-container">
+            <table class="modal-table">
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>Technology</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Operating System</td>
+                  <td>Linux (Ubuntu Server)</td>
+                </tr>
+                <tr>
+                  <td>Version Control</td>
+                  <td>Git + GitHub</td>
+                </tr>
+                <tr>
+                  <td>Containerization</td>
+                  <td>Docker</td>
+                </tr>
+                <tr>
+                  <td>Container Orchestration</td>
+                  <td>Kubernetes (K8s)</td>
+                </tr>
+                <tr>
+                  <td>Kubernetes Package Management</td>
+                  <td>Helm</td>
+                </tr>
+                <tr>
+                  <td>Traffic Routing</td>
+                  <td>Kubernetes Ingress (NGINX)</td>
+                </tr>
+                <tr>
+                  <td>CI/CD</td>
+                  <td>Jenkins</td>
+                </tr>
+                <tr>
+                  <td>Additional CI/CD</td>
+                  <td>GitHub Actions</td>
+                </tr>
+                <tr>
+                  <td>GitOps Deployment</td>
+                  <td>ArgoCD</td>
+                </tr>
+                <tr>
+                  <td>Monitoring</td>
+                  <td>Prometheus</td>
+                </tr>
+                <tr>
+                  <td>Dashboard & Visualization</td>
+                  <td>Grafana</td>
+                </tr>
+                <tr>
+                  <td>Infrastructure as Code</td>
+                  <td>Terraform</td>
+                </tr>
+                <tr>
+                  <td>Configuration Management</td>
+                  <td>Ansible</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>How I Deployed It</h4>
+          <p class="modal-text">Deployed using a modern GitOps pipeline: Wrote <strong>Terraform</strong> scripts to provision cloud host virtual machines and K8s environments. Applied <strong>Ansible</strong> playbooks to perform host provisioning and base package configurations. Containerized application services with multi-stage <strong>Dockerfiles</strong> and packaged them as <strong>Helm</strong> charts. Deployed workloads into <strong>Kubernetes</strong> and automated continuous sync through <strong>ArgoCD</strong>. Setup end-to-end automated pipelines with <strong>Jenkins</strong> and <strong>GitHub Actions</strong> to test, lint, and build images, and wired active logging/dashboard alerting using <strong>Prometheus</strong> and <strong>Grafana</strong>.</p>
+        </div>
+        <div class="modal-section">
+          <h4>GitHub Repository</h4>
+          <a href="https://github.com/nikhilesht19" target="_blank" class="modal-link-button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project: Cloud Tracker -->
+      <div class="modal-body" data-content="project-cloud-tracker">
+        <div class="modal-header-section">
+          <div class="modal-badge">PROJECT DETAILS</div>
+          <h3 class="modal-title">Cloud Tracker</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Project Details</h4>
+          <p class="modal-text">A unified cloud auditing tool designed to track active virtual resources, VPC configurations, IAM keys, and storage buckets. Built to scan and alert on public assets, identify configuration drift, and analyze cost efficiency for AWS accounts.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Core Tech Stack</h4>
+          <div class="modal-tags">
+            <span class="modal-tag">Go (Golang)</span>
+            <span class="modal-tag">AWS SDK</span>
+            <span class="modal-tag">Terraform</span>
+            <span class="modal-tag">Docker</span>
+            <span class="modal-tag">Python (Slack API)</span>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>How I Deployed It</h4>
+          <p class="modal-text">Wrote <strong>Terraform</strong> scripts to configure secure IAM Roles and VPC configurations. Packaged the Go auditor binaries into compact scratch-based <strong>Docker</strong> container images. Deployed as scheduled serverless tasks running on <strong>AWS ECS Fargate</strong>, managed by <strong>AWS EventBridge</strong>. Integrated with Slack webhooks via Python alerting bridges. Established automated testing and container image builds with <strong>GitHub Actions</strong>.</p>
+        </div>
+        <div class="modal-section">
+          <h4>GitHub Repository</h4>
+          <a href="https://github.com/nikhilesht19/cloudtracker-dev.git" target="_blank" class="modal-link-button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project: Stock Room -->
+      <div class="modal-body" data-content="project-stock-room">
+        <div class="modal-header-section">
+          <div class="modal-badge">PROJECT DETAILS</div>
+          <h3 class="modal-title">Stock Room</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Project Details</h4>
+          <p class="modal-text">An automated warehouse cataloging and inventory tracking system. Enables catalog entries, sets minimum safety inventory thresholds, maintains secure log audits of changes, and sends automatic low-stock notifications to procurement systems.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Core Tech Stack</h4>
+          <div class="modal-tags">
+            <span class="modal-tag">Node.js</span>
+            <span class="modal-tag">Express</span>
+            <span class="modal-tag">PostgreSQL</span>
+            <span class="modal-tag">Redis</span>
+            <span class="modal-tag">Docker Compose</span>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>How I Deployed It</h4>
+          <p class="modal-text">Containerized Node.js, PostgreSQL, and Redis cache instances inside multi-container <strong>Docker Compose</strong> files. Deployed to remote Linux virtual servers with automated backups enabled for database volumes. Used <strong>Redis</strong> to cache item catalog lookups and session tokens (speeding up query loads by 60%). Implemented end-to-end continuous integration and deployment with <strong>GitHub Actions</strong> workflows.</p>
+        </div>
+        <div class="modal-section">
+          <h4>GitHub Repository</h4>
+          <a href="https://github.com/nikhilesht19/stockroom.git" target="_blank" class="modal-link-button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project: Pulse Chat -->
+      <div class="modal-body" data-content="project-pulse-chat">
+        <div class="modal-header-section">
+          <div class="modal-badge">PROJECT DETAILS</div>
+          <h3 class="modal-title">Pulse Chat</h3>
+        </div>
+        <div class="modal-section">
+          <h4>Project Details</h4>
+          <p class="modal-text">A highly responsive live-chat and collaborative messaging platform supporting direct messaging, channel creation, user status monitoring, and low-latency client updates using persistent WebSocket tunnels.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Core Tech Stack</h4>
+          <div class="modal-tags">
+            <span class="modal-tag">FastAPI (Python)</span>
+            <span class="modal-tag">WebSockets</span>
+            <span class="modal-tag">Redis Pub/Sub</span>
+            <span class="modal-tag">React</span>
+            <span class="modal-tag">Docker</span>
+            <span class="modal-tag">Jenkins</span>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>How I Deployed It</h4>
+          <p class="modal-text">Containerized application packages with <strong>Docker</strong>. Utilized a **Redis Pub/Sub** backplane to synchronize message events between multiple scaled chat server instances. Deployed application layers behind custom load balancers to manage thousands of active <strong>WebSocket</strong> connections. Built a automated build, test, and container packaging workflow using <strong>Jenkins</strong> pipelines.</p>
+        </div>
+        <div class="modal-section">
+          <h4>GitHub Repository</h4>
+          <a href="https://github.com/nikhilesht19/pulse-chat.git" target="_blank" class="modal-link-button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
