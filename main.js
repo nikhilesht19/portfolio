@@ -58,7 +58,7 @@ function animateCursor() {
 animateCursor();
 
 // Cursor hover effects
-const hoverElements = document.querySelectorAll('a, button, .skill-card, .cert-card, .timeline-card, .contact-cta, .hero-icon-item, .project-card');
+const hoverElements = document.querySelectorAll('a, button, .skill-card, .cert-card, .timeline-card, .contact-cta, .hero-icon-item, .project-card, .mockup-card');
 hoverElements.forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.classList.add('cursor-hover');
@@ -774,4 +774,23 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeModal();
   }
+});
+
+// ============================================
+// EXPERIENCE DASHBOARD CARD DROPDOWNS
+// ============================================
+document.querySelectorAll('.mockup-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const isActive = card.classList.contains('active');
+    
+    // Collapse all cards first for accordion behavior
+    document.querySelectorAll('.mockup-card').forEach(c => {
+      c.classList.remove('active');
+    });
+
+    // If card was not active, open it
+    if (!isActive) {
+      card.classList.add('active');
+    }
+  });
 });

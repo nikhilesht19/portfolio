@@ -985,12 +985,16 @@ ul {
   background: var(--card-color, #e8d5f5);
   border-radius: 14px;
   padding: 20px;
-  transition: all 0.3s var(--ease-out);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .mockup-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-md);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .mockup-card-title {
@@ -999,11 +1003,81 @@ ul {
   font-weight: 600;
   margin-bottom: 6px;
   color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mockup-card-icon {
+  font-size: 0.6rem;
+  opacity: 0.5;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease;
+}
+
+.mockup-card:hover .mockup-card-icon {
+  opacity: 0.9;
+}
+
+.mockup-card.active .mockup-card-icon {
+  transform: rotate(180deg);
+  opacity: 0.9;
 }
 
 .mockup-card-text {
   font-size: 0.7rem;
   color: var(--text-secondary);
+  transition: opacity 0.3s ease;
+}
+
+.mockup-card.active .mockup-card-text {
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.mockup-card-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  transition: max-height 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.35s ease,
+              margin-top 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              padding-top 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.45s ease;
+}
+
+.mockup-card.active .mockup-card-details {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.details-list li {
+  position: relative;
+  padding-left: 10px;
+  line-height: 1.4;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+}
+
+.details-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-purple);
 }
 
 @media (max-width: 768px) {
