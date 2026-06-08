@@ -601,6 +601,8 @@ ul {
 .hero-right {
   max-width: 380px;
   padding: 24px 28px;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .hero-description {
