@@ -4,6 +4,27 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Golden-brown color palette (warmer bronze, honey, and soft golden brown tones) shared by preloader and homepage cubes
+const goldColors = [
+  new THREE.Color(0xe6b870), // warm amber/gold
+  new THREE.Color(0xc69265), // soft bronze brown
+  new THREE.Color(0xab7b4c), // warm golden brown
+  new THREE.Color(0xe0ab5d), // honey gold
+  new THREE.Color(0xf5eccd), // warm champagne gold
+];
+
+// Helper to interpolate between gold tones for a smooth 3D spectrum
+function getGoldSpectrumColor(x, y, z) {
+  const nx = (x + 1) / 2;
+  const ny = (y + 1) / 2;
+  const nz = (z + 1) / 2;
+  
+  const c1 = goldColors[0].clone().lerp(goldColors[2], nx);
+  const c2 = goldColors[1].clone().lerp(goldColors[3], ny);
+  const finalColor = c1.lerp(c2, nz).lerp(goldColors[4], (nx + ny + nz) / 3);
+  return finalColor;
+}
+
 // ============================================
 // PRELOADER
 // ============================================
@@ -11,9 +32,171 @@ const preloader = document.getElementById('preloader');
 const preloaderCounter = document.getElementById('preloader-counter');
 const preloaderBarFill = document.getElementById('preloader-bar-fill');
 
+// --- Preloader 3D Rubik's Cube Scene ---
+const preloaderCanvas = document.getElementById('preloader-canvas');
+const preloaderScene = new THREE.Scene();
+
+// Aspect ratio is 1 (square canvas)
+const preloaderCamera = new THREE.PerspectiveCamera(40, 1.0, 0.1, 100);
+preloaderCamera.position.set(0, 0, 10.5);
+
+const preloaderRenderer = new THREE.WebGLRenderer({
+  canvas: preloaderCanvas,
+  antialias: true,
+  alpha: true
+});
+preloaderRenderer.setSize(200, 200);
+preloaderRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+// Matching light setup for the preloader scene
+const pAmbient = new THREE.AmbientLight(0xffffff, 0.85);
+preloaderScene.add(pAmbient);
+
+const pDir1 = new THREE.DirectionalLight(0xffffff, 1.5);
+pDir1.position.set(6, 10, 8);
+preloaderScene.add(pDir1);
+
+const pDir2 = new THREE.DirectionalLight(0xeacbe9, 0.75);
+pDir2.position.set(-6, -4, 5);
+preloaderScene.add(pDir2);
+
+const pPoint = new THREE.PointLight(0xb198c6, 0.9, 30);
+pPoint.position.set(0, 0, 8);
+preloaderScene.add(pPoint);
+
+const pRim = new THREE.DirectionalLight(0xffffff, 0.8);
+pRim.position.set(-8, 8, -8);
+preloaderScene.add(pRim);
+
+// Create groups for preloader cube rotation mechanics
+const preloaderCubeGroup = new THREE.Group();
+preloaderScene.add(preloaderCubeGroup);
+
+const preloaderRotationGroup = new THREE.Group();
+preloaderCubeGroup.add(preloaderRotationGroup);
+
+const pBlockSize = 1.25;
+const pSpacing = 1.45;
+const preloaderBlocks = [];
+const pGeometry = new THREE.BoxGeometry(pBlockSize, pBlockSize, pBlockSize);
+
+for (let x = -1; x <= 1; x++) {
+  for (let y = -1; y <= 1; y++) {
+    for (let z = -1; z <= 1; z++) {
+      const pColor = getGoldSpectrumColor(x, y, z);
+      const pMaterial = new THREE.MeshPhysicalMaterial({
+        color: pColor,
+        roughness: 0.2,
+        metalness: 0.55,
+        clearcoat: 0.5,
+        clearcoatRoughness: 0.1,
+        transparent: true,
+        opacity: 1.0
+      });
+      
+      const pBlock = new THREE.Mesh(pGeometry, pMaterial);
+      pBlock.position.set(x * pSpacing, y * pSpacing, z * pSpacing);
+      
+      preloaderCubeGroup.add(pBlock);
+      preloaderBlocks.push(pBlock);
+    }
+  }
+}
+
+// Initial perspective tilt for the entire preloader cube
+preloaderCubeGroup.rotation.set(0.35, -0.45, 0.1);
+
+// --- Preloader Rubik's Cube Animation Logic ---
+let isPreloaderRotating = false;
+let preloaderActive = true;
+
+function performPreloaderMove() {
+  if (!preloaderActive) return;
+  if (isPreloaderRotating) return;
+
+  isPreloaderRotating = true;
+
+  const axes = ['x', 'y', 'z'];
+  const axis = axes[Math.floor(Math.random() * axes.length)];
+  const sliceIndex = [-1, 0, 1][Math.floor(Math.random() * 3)];
+  const isClockwise = Math.random() < 0.5;
+  const angle = (isClockwise ? 1 : -1) * (Math.PI / 2);
+
+  const sliceBlocks = [];
+  const tolerance = 0.4;
+  const targetValue = sliceIndex * pSpacing;
+
+  preloaderBlocks.forEach(block => {
+    let posValue;
+    if (axis === 'x') posValue = block.position.x;
+    else if (axis === 'y') posValue = block.position.y;
+    else posValue = block.position.z;
+
+    if (Math.abs(posValue - targetValue) < tolerance) {
+      sliceBlocks.push(block);
+    }
+  });
+
+  // Attach blocks to rotation group to perform slice rotation
+  sliceBlocks.forEach(block => {
+    preloaderRotationGroup.attach(block);
+  });
+
+  const targetRotation = { val: 0 };
+  gsap.to(targetRotation, {
+    val: angle,
+    duration: 0.7,
+    ease: 'power2.inOut',
+    onUpdate: () => {
+      preloaderRotationGroup.rotation[axis] = targetRotation.val;
+    },
+    onComplete: () => {
+      preloaderRotationGroup.updateMatrixWorld(true);
+
+      // Return blocks to the main group, baking their new rotation
+      for (let i = sliceBlocks.length - 1; i >= 0; i--) {
+        preloaderCubeGroup.attach(sliceBlocks[i]);
+      }
+
+      // Reset the rotation group for the next turn
+      preloaderRotationGroup.rotation[axis] = 0;
+      preloaderRotationGroup.updateMatrixWorld(true);
+
+      isPreloaderRotating = false;
+
+      // Queue next random turn
+      setTimeout(performPreloaderMove, 250);
+    }
+  });
+}
+
+// Start slice turns loop
+performPreloaderMove();
+
+// Preloader render loop
+const preloaderTimer = new THREE.Timer();
+
+function animatePreloader(timestamp) {
+  if (!preloaderActive) return;
+  requestAnimationFrame(animatePreloader);
+
+  preloaderTimer.update(timestamp);
+  const elapsed = preloaderTimer.getElapsed();
+
+  // Gentle background rotation of the entire group
+  preloaderCubeGroup.rotation.y = elapsed * 0.25;
+  preloaderCubeGroup.rotation.x = elapsed * 0.12;
+
+  preloaderRenderer.render(preloaderScene, preloaderCamera);
+}
+
+// Start preloader render loop
+animatePreloader();
+
 let loadProgress = 0;
 const loadInterval = setInterval(() => {
-  loadProgress += Math.random() * 12;
+  // Paced increments to load in ~1.8 seconds (lively but still visual)
+  loadProgress += Math.random() * 5 + 2;
   if (loadProgress >= 100) {
     loadProgress = 100;
     clearInterval(loadInterval);
@@ -24,12 +207,15 @@ const loadInterval = setInterval(() => {
         ease: 'power4.inOut',
         onComplete: () => {
           preloader.style.display = 'none';
+          preloaderActive = false; // Stop rendering preloader cube
+          preloaderRenderer.dispose(); // Release cube WebGL resources
           initAnimations();
         }
       });
     }, 400);
   }
-  preloaderCounter.textContent = Math.floor(loadProgress);
+  // Append the '%' sign as requested
+  preloaderCounter.textContent = Math.floor(loadProgress) + '%';
   preloaderBarFill.style.width = loadProgress + '%';
 }, 80);
 
@@ -181,26 +367,7 @@ scene.add(rimLight);
 const cubeGroup = new THREE.Group();
 scene.add(cubeGroup);
 
-// Golden-brown color palette (warmer bronze, honey, and soft golden brown tones)
-const goldColors = [
-  new THREE.Color(0xe6b870), // warm amber/gold
-  new THREE.Color(0xc69265), // soft bronze brown
-  new THREE.Color(0xab7b4c), // warm golden brown
-  new THREE.Color(0xe0ab5d), // honey gold
-  new THREE.Color(0xf5eccd), // warm champagne gold
-];
-
-// Helper to interpolate between gold tones for a smooth 3D spectrum
-function getGoldSpectrumColor(x, y, z) {
-  const nx = (x + 1) / 2;
-  const ny = (y + 1) / 2;
-  const nz = (z + 1) / 2;
-  
-  const c1 = goldColors[0].clone().lerp(goldColors[2], nx);
-  const c2 = goldColors[1].clone().lerp(goldColors[3], ny);
-  const finalColor = c1.lerp(c2, nz).lerp(goldColors[4], (nx + ny + nz) / 3);
-  return finalColor;
-}
+// Colors and helper getGoldSpectrumColor are declared at the top of the file to share with preloader scene
 
 const gridSize = 3; // 3x3x3 grid
 const blockSize = 1.25;
