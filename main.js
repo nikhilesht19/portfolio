@@ -513,20 +513,30 @@ function initAnimations() {
     });
   });
 
-  // Skill cards stagger
+  // Skill cards stagger and horizontal spread out
   gsap.fromTo('.skill-card', 
-    { y: 60, opacity: 0, rotateX: 10 },
+    { 
+      y: 60, 
+      opacity: 0, 
+      rotateX: 10,
+      x: (index) => {
+        const col = index % 3; // 3 columns
+        if (col === 0) return -35; // left column slides out from left
+        if (col === 2) return 35;  // right column slides out from right
+        return 0;                 // middle column slides straight up
+      }
+    },
     {
       y: 0,
       opacity: 1,
       rotateX: 0,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: 'power3.out',
+      x: 0,
+      ease: 'power2.out',
       scrollTrigger: {
         trigger: '.skills-grid',
-        start: 'top 75%',
-        toggleActions: 'play none none reverse',
+        start: 'top 88%',
+        end: 'top 65%',
+        scrub: 1.5,
       }
     }
   );
@@ -571,25 +581,59 @@ function initAnimations() {
     }
   );
 
-  // Project, Certification, Awards, and Education cards stagger reveal
-  gsap.utils.toArray('.cert-grid, .project-grid').forEach(grid => {
-    gsap.fromTo(grid.querySelectorAll('.cert-card, .project-card'),
-      { y: 50, opacity: 0, scale: 0.95 },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.7,
-        stagger: 0.12,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: grid,
-          start: 'top 75%',
-          toggleActions: 'play none none reverse',
-        }
+  // Project cards stagger and spread out with smooth scrub
+  gsap.fromTo('.project-card',
+    { 
+      y: 50, 
+      opacity: 0, 
+      scale: 0.95,
+      x: (index) => {
+        const col = index % 2; // 2 columns
+        return col === 0 ? -35 : 35; // spread left and right
       }
-    );
-  });
+    },
+    {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.project-grid',
+        start: 'top 88%',
+        end: 'top 65%',
+        scrub: 1.5,
+      }
+    }
+  );
+
+  // Certification, Awards, and Education cards stagger and spread out with smooth scrub
+  gsap.fromTo('.cert-card',
+    { 
+      y: 50, 
+      opacity: 0, 
+      scale: 0.95,
+      x: (index) => {
+        const col = index % 3; // 3 columns
+        if (col === 0) return -35;
+        if (col === 2) return 35;
+        return 0;
+      }
+    },
+    {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.cert-grid',
+        start: 'top 88%',
+        end: 'top 65%',
+        scrub: 1.5,
+      }
+    }
+  );
 
   // Contact section
   gsap.fromTo('.contact-cta',
@@ -607,20 +651,30 @@ function initAnimations() {
     }
   );
 
-  // Mockup cards stagger
+  // Mockup cards stagger and spread out from center with smooth scrub
   gsap.fromTo('.mockup-card',
-    { y: 30, opacity: 0, scale: 0.9 },
+    { 
+      y: 30, 
+      opacity: 0, 
+      scale: 0.9,
+      x: (index) => {
+        const col = index % 3; // 3 columns
+        if (col === 0) return -25;
+        if (col === 2) return 25;
+        return 0;
+      }
+    },
     {
       y: 0,
       opacity: 1,
       scale: 1,
-      duration: 0.5,
-      stagger: 0.08,
+      x: 0,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.experience-mockup',
-        start: 'top 75%',
-        toggleActions: 'play none none reverse',
+        start: 'top 88%',
+        end: 'top 65%',
+        scrub: 1.5,
       }
     }
   );
